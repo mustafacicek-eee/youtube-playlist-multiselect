@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "YouTube™ için Playlist Çoklu Seçim"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "YouTube listelerinde çoklu seçim: kopyala, taşı, kaldır, sırala, tekrarları bul. Takip yok; yalnızca youtube.com ile konuşur."
+  }
+}

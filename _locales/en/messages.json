@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "Playlist Multiselect for YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Multi-select for YouTube playlists: copy, move, remove, sort, find duplicates. No tracking; talks only to youtube.com."
+  }
+}

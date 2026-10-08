@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# Paketler / anahtarlar — asla yükleme
+*.zip
+*.crx
+*.pem
+.env
+.env.*
+
+# Editör / araç
+.vscode/
+.idea/
+node_modules/
+*.log
+
+# Ham ekran görüntüleri (yalnızca seçilen, temizlenmiş görsel docs/ içine konur)
+fotolar/
+photos/
