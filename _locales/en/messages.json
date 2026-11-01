@@ -7,5 +7,11 @@
   },
   "extDesc": {
     "message": "Multi-select for YouTube playlists: copy, move, remove, sort, find duplicates. No tracking; talks only to youtube.com."
+  },
+  "popupHint": {
+    "message": "Open a playlist on YouTube, then click the “☑ Multiselect” button at the bottom left."
+  },
+  "popupOpen": {
+    "message": "Open my playlists"
   }
 }

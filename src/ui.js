@@ -22,7 +22,9 @@
   const STR = {
     tr: {
       launcher: 'Çoklu seçim', loading: 'Yükleniyor… {0}', videos: '{0} video', hiddenNote: ' · {0} erişilemeyen video YouTube tarafından gizli',
-      search: 'Başlık veya kanalda ara…', selMatches: 'Eşleşenleri seç', all: 'Tümü', none: 'Hiçbiri', invert: 'Ters çevir',
+      search: 'Başlık veya kanalda ara…', searchRe: 'RegEx ile başlık veya kanalda ara…',
+      regexOn: 'RegEx araması açık (düz aramaya dönmek için tıkla)', regexOff: 'RegEx ile ara (düzenli ifade)', badRegex: 'Geçersiz RegEx: {0}',
+      selMatches: 'Eşleşenleri seç', all: 'Tümü', none: 'Hiçbiri', invert: 'Ters çevir',
       dups: 'Tekrarları seç', sortPh: 'Listeyi sırala…', sTitleAsc: 'Başlık A→Z', sTitleDesc: 'Başlık Z→A', sChannel: 'Kanal A→Z',
       sDurAsc: 'Süre: kısadan uzuna', sDurDesc: 'Süre: uzundan kısaya', sReverse: 'Ters çevir', sShuffle: 'Karıştır',
       selected: '<b>{0}</b> seçili · {1}', copyTo: 'Kopyala…', moveTo: 'Taşı…', toTop: 'Başa al', toBottom: 'Sona al', remove: 'Kaldır',
@@ -64,7 +66,9 @@
     },
     en: {
       launcher: 'Multiselect', loading: 'Loading… {0}', videos: '{0} videos', hiddenNote: ' · {0} unavailable videos hidden by YouTube',
-      search: 'Search title or channel…', selMatches: 'Select matches', all: 'All', none: 'None', invert: 'Invert',
+      search: 'Search title or channel…', searchRe: 'Search title or channel with RegEx…',
+      regexOn: 'RegEx search is on (click for plain search)', regexOff: 'Search with RegEx (regular expression)', badRegex: 'Invalid RegEx: {0}',
+      selMatches: 'Select matches', all: 'All', none: 'None', invert: 'Invert',
       dups: 'Select duplicates', sortPh: 'Sort playlist…', sTitleAsc: 'Title A→Z', sTitleDesc: 'Title Z→A', sChannel: 'Channel A→Z',
       sDurAsc: 'Duration: short→long', sDurDesc: 'Duration: long→short', sReverse: 'Reverse', sShuffle: 'Shuffle',
       selected: '<b>{0}</b> selected · {1}', copyTo: 'Copy…', moveTo: 'Move…', toTop: 'To top', toBottom: 'To bottom', remove: 'Remove',
@@ -151,6 +155,10 @@
     open: false, playlistId: null, title: '', total: null, items: [], rows: new Map(), selected: new Set(),
     anchor: null, focus: null, filter: '', visible: [], busy: false, changed: false, loadToken: 0,
   };
+  // RegEx arama modu (youtube.com localStorage'ında hatırlanır)
+  const REGEX_KEY = 'msx.regex.v1';
+  let REGEX = (() => { try { return localStorage.getItem(REGEX_KEY) === '1'; } catch (_) { return false; } })();
+  let filterError = null;
   const keyOf = (it) => it.setVideoId || ('i' + it.index + ':' + it.videoId);
   const itemByKey = () => new Map(S.items.map((it) => [keyOf(it), it]));
   const selectedItems = () => S.items.filter((it) => S.selected.has(keyOf(it)));
@@ -174,6 +182,7 @@
   const elTitle = h('h2');
   const elSub = h('div', { class: 'sub' });
   const elSearch = h('input', { class: 'search', type: 'text', placeholder: t('search') });
+  const elRegex = h('button', { class: 'btn re', type: 'button', onclick: () => toggleRegex() }, '.*');
   const SORT_LABEL = { '': 'sortPh', 'title-asc': 'sTitleAsc', 'title-desc': 'sTitleDesc', 'channel-asc': 'sChannel', 'duration-asc': 'sDurAsc', 'duration-desc': 'sDurDesc', reverse: 'sReverse', shuffle: 'sShuffle' };
   const elSort = h('select', { class: 'btn', title: t('sortPh') },
     Object.keys(SORT_LABEL).map((v) => h('option', { value: v, text: t(SORT_LABEL[v]) })));
@@ -222,7 +231,7 @@
       h('div', { class: 'ttl' }, elTitle, elSub),
       elLang, elReloadBtn, elCloseBtn),
     elWarn,
-    h('div', { class: 'bar' }, elSearch, B.selMatches),
+    h('div', { class: 'bar' }, elSearch, elRegex, B.selMatches),
     h('div', { class: 'bar' }, B.all, B.none, B.invert, B.dups, B.findDead),
     h('div', { class: 'bar sels' }, elChannel, elDuration, elSort),
     elList,
@@ -251,10 +260,11 @@
     elLangEN.classList.toggle('on', LANG === 'en');
   }
   syncLangToggle();
+  syncRegexUI();
   /** Kurulumda bir kez yazılan sabit etiketleri seçili dile göre yeniden yazar. */
   function relabel() {
     launcher.textContent = '☑ ' + t('launcher');
-    elSearch.placeholder = t('search');
+    syncRegexUI();
     elSort.title = t('sortPh');
     for (const o of elSort.options) if (SORT_LABEL[o.value] != null) o.textContent = t(SORT_LABEL[o.value]);
     elDuration.title = t('byDuration');
@@ -268,8 +278,7 @@
     elReloadBtn.title = t('reload');
     elCloseBtn.title = t('close');
     elToastClose.title = t('close');
-    const nm = elList.querySelector('[data-nomatch]');
-    if (nm) nm.textContent = t('noMatch');
+    syncFilterMsg();
     const em = elList.querySelector('[data-empty]');
     if (em) em.textContent = t('empty');
     if (S.rows.size || em) updateSub(); // yükleme sürerken alt başlığa dokunma; ilerleme metni zaten yeni dille yazılır
@@ -409,17 +418,46 @@
   function applyFilter() {
     S.filter = elSearch.value;
     S.visible = [];
+    const matcher = core.makeMatcher(S.filter, REGEX);
+    filterError = matcher.error;
     for (const it of S.items) {
       const k = keyOf(it);
       const r = S.rows.get(k);
       if (!r) continue;
-      const vis = core.matchesFilter(it, S.filter);
+      const vis = matcher.test(it);
       r.row.hidden = !vis;
       if (vis) S.visible.push(k);
     }
     const nm = elList.querySelector('[data-nomatch]');
     if (nm) nm.hidden = !!S.visible.length || !S.items.length;
+    syncFilterMsg();
     rebuildChannelOptions();
+  }
+
+  /** Geçersiz RegEx'i arama kutusunda ve "eşleşme yok" satırında gösterir. */
+  function syncFilterMsg() {
+    const bad = !!filterError;
+    elSearch.classList.toggle('bad', bad);
+    elSearch.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    elSearch.title = bad ? t('badRegex', filterError) : '';
+    const nm = elList.querySelector('[data-nomatch]');
+    if (nm) nm.textContent = bad ? t('badRegex', filterError) : t('noMatch');
+  }
+
+  function syncRegexUI() {
+    elRegex.classList.toggle('on', REGEX);
+    elRegex.setAttribute('aria-pressed', REGEX ? 'true' : 'false');
+    elRegex.title = t(REGEX ? 'regexOn' : 'regexOff');
+    elRegex.setAttribute('aria-label', elRegex.title);
+    elSearch.placeholder = t(REGEX ? 'searchRe' : 'search');
+  }
+
+  function toggleRegex() {
+    REGEX = !REGEX;
+    try { localStorage.setItem(REGEX_KEY, REGEX ? '1' : '0'); } catch (_) { /* yok say */ }
+    syncRegexUI();
+    applyFilter();
+    elSearch.focus();
   }
 
   function rebuildChannelOptions() {

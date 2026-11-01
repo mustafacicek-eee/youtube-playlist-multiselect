@@ -55,6 +55,10 @@ button, input, select { font: inherit; color: inherit; }
   outline: none;
 }
 .search:focus { border-color: var(--accent); }
+.search.bad, .search.bad:focus { border-color: var(--danger); }
+.btn.re { font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 600; padding: 6px 10px; }
+.btn.re.on { background: var(--accent); color: #fff; }
+:host([data-theme="dark"]) .btn.re.on { color: #0f0f0f; }
 select.btn { appearance: auto; padding-right: 8px; }
 .bar.sels { flex-wrap: nowrap; }
 .bar.sels select { flex: 1 1 0; min-width: 0; text-overflow: ellipsis; }

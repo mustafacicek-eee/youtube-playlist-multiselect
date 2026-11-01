@@ -7,5 +7,11 @@
   },
   "extDesc": {
     "message": "YouTube listelerinde çoklu seçim: kopyala, taşı, kaldır, sırala, tekrarları bul. Takip yok; yalnızca youtube.com ile konuşur."
+  },
+  "popupHint": {
+    "message": "YouTube'da bir oynatma listesi aç, sonra sol alttaki “☑ Çoklu seçim” düğmesine tıkla."
+  },
+  "popupOpen": {
+    "message": "Listelerimi aç"
   }
 }

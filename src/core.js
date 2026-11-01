@@ -112,6 +112,32 @@
     return q.split(/\s+/).every((w) => hay.includes(w));
   };
 
+  /**
+   * Arama eşleştiricisi; filtre her uygulandığında bir kez kurulur.
+   * Düz mod: matchesFilter kuralları (değişmedi).
+   * RegEx modu: desen başlığa ve kanala ayrı ayrı uygulanır (^ ve $ her alanın başı/sonu),
+   * büyük/küçük harf duyarsız. Geçersiz desende `error` dolar ve hiçbir öğe eşleşmez;
+   * böylece "Eşleşenleri seç" yanlışlıkla tüm listeyi seçemez.
+   */
+  core.makeMatcher = function (query, regexMode) {
+    const raw = String(query == null ? '' : query);
+    if (!regexMode) return { error: null, test: (item) => core.matchesFilter(item, raw) };
+    if (!raw.trim()) return { error: null, test: () => true };
+    let re;
+    try {
+      re = new RegExp(raw, 'i');
+    } catch (e) {
+      return { error: String((e && e.message) || e), test: () => false };
+    }
+    // JS'nin büyük/küçük harf eşlemesi Türkçe İ/ı'yı kapsamaz ("istanbul" ≠ "İstanbul");
+    // bu yüzden her alan ayrıca Türkçe küçük harfe çevrilmiş hâliyle de denenir. Desene dokunulmaz.
+    const hit = (s) => {
+      const v = String(s || '');
+      return re.test(v) || re.test(v.toLocaleLowerCase('tr-TR'));
+    };
+    return { error: null, test: (item) => hit(item.title) || hit(item.channel) };
+  };
+
   /** Sıralama anahtarları. Karşılaştırmalar kararlı (stable) tutulur. */
   core.sortItems = function (items, mode, rng) {
     const arr = items.slice();
