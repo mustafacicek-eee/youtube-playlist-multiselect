@@ -42,7 +42,8 @@
   }
 
   class ApiError extends Error {
-    constructor(message, detail) { super(message); this.detail = detail; }
+    // code/args: arayüzün hatayı seçili dile çevirmesi için (i18n.js: 'err' + code). message yedek metindir.
+    constructor(message, detail, code, args) { super(message); this.detail = detail; this.code = code || null; this.args = args || []; }
   }
 
   const api = {};
@@ -53,7 +54,7 @@
 
   api.post = async function (endpoint, body, { auth = true } = {}) {
     const context = cfg('INNERTUBE_CONTEXT');
-    if (!context) throw new ApiError('YouTube yapılandırması (ytcfg) bulunamadı. Sayfayı yenileyin.');
+    if (!context) throw new ApiError('YouTube yapılandırması (ytcfg) bulunamadı. Sayfayı yenileyin.', null, 'NoCfg');
     const headers = { 'Content-Type': 'application/json' };
     const clientName = cfg('INNERTUBE_CONTEXT_CLIENT_NAME');
     const clientVersion = cfg('INNERTUBE_CLIENT_VERSION');
@@ -85,6 +86,25 @@
   };
 
   /**
+   * Liste var ama görünür videosu yoksa başlığını, aksi hâlde null döndürür.
+   * Canlı gözlem (2026-11-15): var olan listede /browse VL<id> yanıtı metadata.playlistMetadataRenderer.title içerir;
+   * olmayan/erişilemeyen listede yalnızca ERROR uyarısı gelir (contents ve metadata yok).
+   */
+  async function emptyPlaylistTitle(playlistId) {
+    try {
+      const r = await api.post('browse', { browseId: 'VL' + playlistId });
+      const meta = r && r.metadata && r.metadata.playlistMetadataRenderer;
+      if (!r || !r.contents || !meta || typeof meta.title !== 'string') return null;
+      const vids = [];
+      core.findAllByKey(r, 'playlistVideoRenderer', vids);
+      core.findAllByKey(r, 'lockupViewModel', vids);
+      return vids.length ? null : meta.title;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /**
    * Bir oynatma listesinin tamamını /next pencereleriyle çeker.
    * onProgress(yüklenen, toplam)
    */
@@ -96,7 +116,13 @@
       const resp = await api.post('next', body);
       const page = core.parseNextPlaylist(resp);
       if (!page) {
-        if (call === 0) throw new ApiError('Liste okunamadı (gizli, silinmiş ya da erişim yok olabilir).', resp);
+        if (call === 0) {
+          // /next boş listede (ya da tüm videoları gizlenmiş listede) oynatma listesi paneli döndürmez.
+          // Liste gerçekten var ve boşsa hata değil, boş liste göster.
+          const title = await emptyPlaylistTitle(playlistId);
+          if (title != null) return { playlistId, title, total: 0, items: [] };
+          throw new ApiError('Liste okunamadı (gizli, silinmiş ya da erişim yok olabilir).', resp, 'ListRead');
+        }
         break;
       }
       if (!meta) meta = { playlistId: page.playlistId || playlistId, title: page.title, total: page.total };
@@ -116,7 +142,7 @@
     if (typeof status === 'string' && status.indexOf('SUCCEEDED') !== -1) return resp;
     const msg = (resp && resp.error && resp.error.message) ||
       (resp && resp.alerts && JSON.stringify(resp.alerts).slice(0, 200)) || 'bilinmeyen yanıt';
-    throw new ApiError(what + ' başarısız: ' + msg, resp);
+    throw new ApiError(what + ' başarısız: ' + msg, resp, 'EditFailed', [msg]);
   }
 
   api.editPlaylist = async function (playlistId, actions) {
@@ -164,7 +190,7 @@
   /** Yeni liste oluşturur (ilk videolarla birlikte, YouTube.js'deki gibi); oluşturulan ID'yi döndürür. */
   api.createPlaylist = async function (title, privacyStatus, initialVideoIds) {
     const resp = await api.post('playlist/create', { title, privacyStatus: privacyStatus || 'PRIVATE', videoIds: initialVideoIds || [] });
-    if (!resp || !resp.playlistId) throw new ApiError('Liste oluşturulamadı.', resp);
+    if (!resp || !resp.playlistId) throw new ApiError('Liste oluşturulamadı.', resp, 'Create');
     return resp.playlistId;
   };
 
@@ -277,7 +303,7 @@
     const actions = [];
     for (const d of dead) {
       const a = d.removeAction || { action: 'ACTION_REMOVE_VIDEO_BY_VIDEO_ID', removedVideoId: d.videoId };
-      if (!deadIds.has(a.removedVideoId)) throw new ApiError('Güvenlik denetimi: beklenmeyen video kimliği.');
+      if (!deadIds.has(a.removedVideoId)) throw new ApiError('Güvenlik denetimi: beklenmeyen video kimliği.', null, 'Safety');
       const sig = JSON.stringify(a);
       if (seen.has(sig)) continue;
       seen.add(sig);

@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Selecció múltiple de llistes per a YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Selecció múltiple a les llistes de YouTube: copia, mou, treu, ordena i troba duplicats. Sense seguiment; només youtube.com."
+  },
+  "popupHint": {
+    "message": "Obre una llista de reproducció a YouTube i fes clic al botó «☑ Selecció múltiple» de baix a l’esquerra."
+  },
+  "popupOpen": {
+    "message": "Obre les meves llistes"
+  }
+}

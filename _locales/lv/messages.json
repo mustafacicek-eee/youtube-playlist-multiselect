@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Vairāku atlase atskaņošanas sarakstos — YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Vairāku videoklipu atlase YouTube atskaņošanas sarakstos: kopēšana, pārvietošana, noņemšana, kārtošana. Bez izsekošanas."
+  },
+  "popupHint": {
+    "message": "Atveriet atskaņošanas sarakstu pakalpojumā YouTube un apakšā pa kreisi noklikšķiniet uz pogas “☑ Vairāku atlase”."
+  },
+  "popupOpen": {
+    "message": "Atvērt manus sarakstus"
+  }
+}

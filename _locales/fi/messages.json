@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Soittolistojen monivalinta YouTube™-palveluun"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Monivalinta YouTube-soittolistoihin: kopioi, siirrä, poista, järjestä, etsi kaksoiskappaleet. Ei seurantaa; vain youtube.com."
+  },
+  "popupHint": {
+    "message": "Avaa soittolista YouTubessa ja klikkaa vasemmassa alakulmassa olevaa ”☑ Monivalinta” ‑painiketta."
+  },
+  "popupOpen": {
+    "message": "Avaa soittolistani"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Flerval i spellistor för YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Flerval i YouTube-spellistor: kopiera, flytta, ta bort, sortera, hitta dubbletter. Ingen spårning; pratar bara med youtube.com."
+  },
+  "popupHint": {
+    "message": "Öppna en spellista på YouTube och klicka på knappen ”☑ Flerval” nere till vänster."
+  },
+  "popupOpen": {
+    "message": "Öppna mina spellistor"
+  }
+}

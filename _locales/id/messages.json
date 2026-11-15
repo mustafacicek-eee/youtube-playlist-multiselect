@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Pilih Banyak Playlist untuk YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Pilih banyak video di playlist YouTube: salin, pindahkan, hapus, urutkan, cari duplikat. Tanpa pelacakan; hanya ke youtube.com."
+  },
+  "popupHint": {
+    "message": "Buka playlist di YouTube, lalu klik tombol “☑ Pilih banyak” di kiri bawah."
+  },
+  "popupOpen": {
+    "message": "Buka playlist saya"
+  }
+}

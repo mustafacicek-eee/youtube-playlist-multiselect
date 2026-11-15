@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Chọn nhiều trong danh sách phát cho YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Chọn nhiều video trong danh sách phát YouTube: sao chép, di chuyển, xóa, sắp xếp, tìm trùng lặp. Không theo dõi."
+  },
+  "popupHint": {
+    "message": "Mở một danh sách phát trên YouTube rồi nhấp vào nút “☑ Chọn nhiều” ở góc dưới bên trái."
+  },
+  "popupOpen": {
+    "message": "Mở danh sách phát của tôi"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Playlist-multiselectie voor YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Meervoudige selectie in YouTube-playlists: kopiëren, verplaatsen, verwijderen, sorteren, duplicaten zoeken. Geen tracking."
+  },
+  "popupHint": {
+    "message": "Open een playlist op YouTube en klik linksonder op de knop ‘☑ Meervoudige selectie’."
+  },
+  "popupOpen": {
+    "message": "Mijn playlists openen"
+  }
+}

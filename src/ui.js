@@ -7,107 +7,24 @@
 (function (root) {
   'use strict';
   const M = root.__msx;
-  if (!M || !M.core || !M.api || M.uiLoaded) return;
+  if (!M || !M.core || !M.api || !M.i18n || M.uiLoaded) return;
   M.uiLoaded = true;
   const { core, api } = M;
 
   // ---------- Dil ----------
-  // Kullanıcının seçtiği dil youtube.com localStorage'ında tutulur; seçim yoksa sayfanın dili kullanılır.
+  // Kullanıcının seçtiği dil youtube.com localStorage'ında tutulur; seçim yoksa sayfanın (YouTube'un) dili kullanılır.
   const LANG_KEY = 'msx.lang.v1';
-  const autoLang = () => (String(document.documentElement.lang || navigator.language || 'en').toLowerCase().startsWith('tr') ? 'tr' : 'en');
+  const { STR, NAMES: LANG_NAMES, pick: pickLang } = M.i18n; // metinler i18n.js içinde
+  const hasLang = (l) => Object.prototype.hasOwnProperty.call(STR, l);
+  const autoLang = () => pickLang(document.documentElement.lang || navigator.language || 'en');
   let LANG = (() => {
-    try { const v = localStorage.getItem(LANG_KEY); if (v === 'tr' || v === 'en') return v; } catch (_) { /* yok say */ }
+    try { const v = localStorage.getItem(LANG_KEY); if (v && hasLang(v)) return v; } catch (_) { /* yok say */ }
     return autoLang();
   })();
-  const STR = {
-    tr: {
-      launcher: 'Çoklu seçim', loading: 'Yükleniyor… {0}', videos: '{0} video', hiddenNote: ' · {0} erişilemeyen video YouTube tarafından gizli',
-      search: 'Başlık veya kanalda ara…', searchRe: 'RegEx ile başlık veya kanalda ara…',
-      regexOn: 'RegEx araması açık (düz aramaya dönmek için tıkla)', regexOff: 'RegEx ile ara (düzenli ifade)', badRegex: 'Geçersiz RegEx: {0}',
-      selMatches: 'Eşleşenleri seç', all: 'Tümü', none: 'Hiçbiri', invert: 'Ters çevir',
-      dups: 'Tekrarları seç', sortPh: 'Listeyi sırala…', sTitleAsc: 'Başlık A→Z', sTitleDesc: 'Başlık Z→A', sChannel: 'Kanal A→Z',
-      sDurAsc: 'Süre: kısadan uzuna', sDurDesc: 'Süre: uzundan kısaya', sReverse: 'Ters çevir', sShuffle: 'Karıştır',
-      selected: '<b>{0}</b> seçili · {1}', copyTo: 'Kopyala…', moveTo: 'Taşı…', toTop: 'Başa al', toBottom: 'Sona al', remove: 'Kaldır',
-      clipCopy: 'Panoya kopyala', clipCut: 'Kes', paste: 'Yapıştır', clipInfo: 'Pano: {0} video ({1}) · kaynak: {2}', clipEmpty: 'Pano boş',
-      modeCopy: 'kopya', modeCut: 'kesilen', close: 'Kapat', reload: 'Yenile', refreshPage: 'Sayfayı yenile',
-      changedNote: 'Liste değişti. YouTube sayfası eski hâlini gösteriyor olabilir.', notLoggedIn: 'YouTube hesabına giriş yapılmamış: yalnızca görüntüleme ve seçim yapılabilir.',
-      notEditable: 'Bu liste türü (otomatik karışık liste) düzenlenemez; yalnızca kopyalayabilirsiniz.',
-      likedNote: 'Beğenilen videolar listesinden kaldırmak, videoyu beğenmekten vazgeçmek anlamına gelebilir.',
-      empty: 'Liste boş.', noMatch: 'Eşleşen video yok.', cancel: 'Vazgeç', ok: 'Tamam', confirm: 'Onayla',
-      pickTarget: 'Hedef liste seç', pickTargetMove: 'Taşınacak liste seç', loadingLists: 'Listelerin yükleniyor…',
-      noLists: 'Liste bulunamadı. Aşağıya URL veya ID yapıştırabilirsin.', pasteId: 'Liste URL’si veya ID’si', useId: 'Bunu kullan',
-      newList: 'Yeni liste oluştur', newName: 'Yeni liste adı', privacy: 'Gizlilik', pPrivate: 'Özel', pUnlisted: 'Liste dışı', pPublic: 'Herkese açık',
-      create: 'Oluştur ve ekle', watchLater: 'Daha sonra izle', badId: 'Geçerli bir liste URL’si/ID’si değil.',
-      confirmRemove: '{0} video bu listeden kaldırılsın mı?', confirmMove: '{0} video “{1}” listesine taşınsın mı? (Eklendikten sonra buradan kaldırılır.)',
-      confirmSort: 'Tüm liste “{0}” düzenine göre sıralanacak. Gereken taşıma: {1}. Devam edilsin mi?', nothingToDo: 'Zaten bu sırada, değişiklik gerekmiyor.',
-      working: 'İşlem sürüyor…', adding: 'Ekleniyor… {0}/{1}', removing: 'Kaldırılıyor… {0}/{1}', moving: 'Taşınıyor… {0}/{1}', verifying: 'Doğrulanıyor…',
-      readingTarget: 'Hedef liste okunuyor…', creating: 'Liste oluşturuluyor…',
-      doneAdd: '{0} video eklendi.', doneAddSkip: '{0} video eklendi, {1} tanesi zaten vardı.', doneMove: '{0} video taşındı.', doneRemove: '{0} video kaldırıldı.',
-      doneOrder: 'Sıralama tamamlandı ({0} taşıma).', orderMismatch: 'Sıralama doğrulanamadı; “Yenile” ile kontrol edip tekrar deneyin.',
-      undo: 'Geri ekle', undoNote: 'Geri eklenen videolar liste sonuna eklenir.', openList: 'Listeyi aç', copied: '{0} video panoya kopyalandı.', cut: '{0} video kesildi. Hedef listede Yapıştır’a bas.',
-      pasteSame: 'Kesilen videolar zaten bu listede; yapıştırma yapılmadı.', pasted: '{0} video yapıştırıldı.', pastedSkip: '{0} video yapıştırıldı, {1} tanesi zaten vardı.',
-      error: 'Hata: {0}', needSetIds: 'Bu listedeki öğe kimlikleri alınamadı; sıralama yapılamıyor.', menuSelectOnly: 'Yalnızca bunu seç',
-      sameList: 'Kaynak ve hedef aynı liste.',
-      byChannel: 'Kanala göre seç…', byDuration: 'Süreye göre seç…', dLt1: '1 dakikadan kısa', d1to10: '1–10 dakika', d10to30: '10–30 dakika',
-      d30to60: '30–60 dakika', dGt60: '1 saat ve üzeri', dUnknown: 'Süresi belirsiz (canlı / yaklaşan)', dCustom: 'Özel aralık…',
-      customTitle: 'Süre aralığı (dakika)', minLabel: 'En az', maxLabel: 'En fazla', maxHint: 'boş = sınırsız', selectBtn: 'Seç',
-      badRange: 'Geçerli bir aralık gir: sayılar 0 veya büyük olmalı ve “en fazla”, “en az”dan büyük olmalı.',
-      addedSel: '{0} video seçime eklendi.', noneMatched: 'Görünen videolar arasında bu ölçüte uyan yok.', menuChannel: 'Bu kanaldan tümünü seç ({0})',
-      filterNote: 'Yalnızca görünen (aramaya uyan) videolar seçilir.',
-      findDead: 'Silinmiş/özel videoları bul', scanHidden: 'Gizlenen videolar taranıyor… {0}', checkingDead: 'Videolar doğrulanıyor… {0}/{1}',
-      noHidden: 'Bu listede YouTube’un gizlediği video yok.', deadTitle: 'Silinmiş ve özel videolar',
-      deadSummary: 'YouTube bu listede {0} videoyu gizliyor. Kesin silinmiş: {1} · Kesin özel: {2}.',
-      deadRestricted: '{0} video hâlâ yayında ama senin bölgende/hesabında izlenemiyor; bunlara dokunulmaz.',
-      deadUnknown: '{0} video doğrulanamadı; bunlara dokunulmaz.', deadNone: 'Kaldırılacak kesin silinmiş/özel video yok.',
-      deadDeleted: 'Silinmiş', deadPrivate: 'Özel', deadIncDeleted: 'Silinmişleri kaldır ({0})', deadIncPrivate: 'Özelleri kaldır ({0})',
-      deadRemove: 'Seçilenleri kaldır', deadNoUndo: 'Bu videolar zaten izlenemiyor; bu işlemin geri alma seçeneği yok.',
-      deadLogin: 'Kaldırmak için YouTube’a giriş yapmalı ve listenin sahibi olmalısın.', deadDone: '{0} silinmiş/özel video kaldırıldı ve doğrulandı.',
-      deadPartial: '{0} video kaldırıldı; {1} video hâlâ listede görünüyor. YouTube isteği uygulamamış olabilir, bir süre sonra tekrar dene.', total: 'toplam {0}', keys: 'Kısayollar: ⇧ tık = aralık, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = kaldır, Esc',
-    },
-    en: {
-      launcher: 'Multiselect', loading: 'Loading… {0}', videos: '{0} videos', hiddenNote: ' · {0} unavailable videos hidden by YouTube',
-      search: 'Search title or channel…', searchRe: 'Search title or channel with RegEx…',
-      regexOn: 'RegEx search is on (click for plain search)', regexOff: 'Search with RegEx (regular expression)', badRegex: 'Invalid RegEx: {0}',
-      selMatches: 'Select matches', all: 'All', none: 'None', invert: 'Invert',
-      dups: 'Select duplicates', sortPh: 'Sort playlist…', sTitleAsc: 'Title A→Z', sTitleDesc: 'Title Z→A', sChannel: 'Channel A→Z',
-      sDurAsc: 'Duration: short→long', sDurDesc: 'Duration: long→short', sReverse: 'Reverse', sShuffle: 'Shuffle',
-      selected: '<b>{0}</b> selected · {1}', copyTo: 'Copy…', moveTo: 'Move…', toTop: 'To top', toBottom: 'To bottom', remove: 'Remove',
-      clipCopy: 'Copy to clipboard', clipCut: 'Cut', paste: 'Paste', clipInfo: 'Clipboard: {0} videos ({1}) · from: {2}', clipEmpty: 'Clipboard empty',
-      modeCopy: 'copied', modeCut: 'cut', close: 'Close', reload: 'Reload', refreshPage: 'Refresh page',
-      changedNote: 'The playlist changed. The YouTube page may still show the old version.', notLoggedIn: 'Not signed in to YouTube: you can only view and select.',
-      notEditable: 'This list type (auto-generated mix) cannot be edited; you can only copy.',
-      likedNote: 'Removing from Liked videos may unlike the video.',
-      empty: 'Playlist is empty.', noMatch: 'No matching videos.', cancel: 'Cancel', ok: 'OK', confirm: 'Confirm',
-      pickTarget: 'Choose target playlist', pickTargetMove: 'Choose playlist to move to', loadingLists: 'Loading your playlists…',
-      noLists: 'No playlists found. Paste a URL or ID below.', pasteId: 'Playlist URL or ID', useId: 'Use this',
-      newList: 'Create new playlist', newName: 'New playlist name', privacy: 'Privacy', pPrivate: 'Private', pUnlisted: 'Unlisted', pPublic: 'Public',
-      create: 'Create & add', watchLater: 'Watch later', badId: 'Not a valid playlist URL/ID.',
-      confirmRemove: 'Remove {0} videos from this playlist?', confirmMove: 'Move {0} videos to “{1}”? (They are removed here after being added.)',
-      confirmSort: 'The whole playlist will be sorted by “{0}”. Moves needed: {1}. Continue?', nothingToDo: 'Already in this order, nothing to do.',
-      working: 'Working…', adding: 'Adding… {0}/{1}', removing: 'Removing… {0}/{1}', moving: 'Moving… {0}/{1}', verifying: 'Verifying…',
-      readingTarget: 'Reading target playlist…', creating: 'Creating playlist…',
-      doneAdd: '{0} videos added.', doneAddSkip: '{0} videos added, {1} were already there.', doneMove: '{0} videos moved.', doneRemove: '{0} videos removed.',
-      doneOrder: 'Reordering done ({0} moves).', orderMismatch: 'Could not verify the order; press Reload and try again.',
-      undo: 'Re-add', undoNote: 'Re-added videos go to the end of the playlist.', openList: 'Open playlist', copied: '{0} videos copied to clipboard.', cut: '{0} videos cut. Press Paste in the target playlist.',
-      pasteSame: 'The cut videos are already in this playlist; nothing pasted.', pasted: '{0} videos pasted.', pastedSkip: '{0} videos pasted, {1} were already there.',
-      error: 'Error: {0}', needSetIds: 'Item IDs for this playlist are missing; cannot reorder.', menuSelectOnly: 'Select only this',
-      sameList: 'Source and target are the same playlist.',
-      byChannel: 'Select by channel…', byDuration: 'Select by duration…', dLt1: 'Under 1 minute', d1to10: '1–10 minutes', d10to30: '10–30 minutes',
-      d30to60: '30–60 minutes', dGt60: '1 hour or longer', dUnknown: 'Unknown duration (live / upcoming)', dCustom: 'Custom range…',
-      customTitle: 'Duration range (minutes)', minLabel: 'At least', maxLabel: 'At most', maxHint: 'empty = no limit', selectBtn: 'Select',
-      badRange: 'Enter a valid range: numbers must be 0 or more and “at most” must be greater than “at least”.',
-      addedSel: '{0} videos added to selection.', noneMatched: 'No visible videos match this criterion.', menuChannel: 'Select all from this channel ({0})',
-      filterNote: 'Only visible (search-matching) videos are selected.',
-      findDead: 'Find deleted/private videos', scanHidden: 'Scanning hidden videos… {0}', checkingDead: 'Verifying videos… {0}/{1}',
-      noHidden: 'YouTube hides no videos in this playlist.', deadTitle: 'Deleted and private videos',
-      deadSummary: 'YouTube hides {0} videos in this playlist. Confirmed deleted: {1} · Confirmed private: {2}.',
-      deadRestricted: '{0} videos are still online but unavailable in your region/account; they are left untouched.',
-      deadUnknown: '{0} videos could not be verified; they are left untouched.', deadNone: 'No confirmed deleted/private videos to remove.',
-      deadDeleted: 'Deleted', deadPrivate: 'Private', deadIncDeleted: 'Remove deleted ({0})', deadIncPrivate: 'Remove private ({0})',
-      deadRemove: 'Remove selected', deadNoUndo: 'These videos are already unwatchable; this cannot be undone.',
-      deadLogin: 'Sign in to YouTube and own this playlist to remove them.', deadDone: '{0} deleted/private videos removed and verified.',
-      deadPartial: '{0} removed; {1} still appear in the playlist. YouTube may not have applied the request, try again later.', total: 'total {0}', keys: 'Shortcuts: ⇧ click = range, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = remove, Esc',
-    },
+  /** Hata metni: api.js'in kod verdiği hatalar seçili dile çevrilir; diğerleri (YouTube'un kendi mesajı vb.) olduğu gibi gösterilir. */
+  const errText = (e) => {
+    const k = e && e.code ? 'err' + e.code : null;
+    return k && STR.en[k] != null ? t(k, ...(e.args || [])) : ((e && e.message) || String(e));
   };
   const t = (k, ...a) => {
     let s = STR[LANG][k] != null ? STR[LANG][k] : (STR.en[k] != null ? STR.en[k] : k);
@@ -182,7 +99,7 @@
   const elTitle = h('h2');
   const elSub = h('div', { class: 'sub' });
   const elSearch = h('input', { class: 'search', type: 'text', placeholder: t('search') });
-  const elRegex = h('button', { class: 'btn re', type: 'button', onclick: () => toggleRegex() }, '.*');
+  const elRegex = h('button', { class: 'btn re', type: 'button', onclick: () => toggleRegex() }, 'RegEx');
   const SORT_LABEL = { '': 'sortPh', 'title-asc': 'sTitleAsc', 'title-desc': 'sTitleDesc', 'channel-asc': 'sChannel', 'duration-asc': 'sDurAsc', 'duration-desc': 'sDurDesc', reverse: 'sReverse', shuffle: 'sShuffle' };
   const elSort = h('select', { class: 'btn', title: t('sortPh') },
     Object.keys(SORT_LABEL).map((v) => h('option', { value: v, text: t(SORT_LABEL[v]) })));
@@ -219,13 +136,14 @@
   const elToastClose = h('button', { title: t('close'), onclick: () => hideToast() }, '✕');
   const elToast = h('div', { class: 'toast', hidden: true, role: 'status' }, elToastText, elToastBtns, elToastClose);
 
-  // Dil seçici (başlıkta): TR | EN — etkin olan vurgulanır
-  const elLangTR = h('span', { text: 'TR', lang: 'tr' });
-  const elLangEN = h('span', { text: 'EN', lang: 'en' });
-  const elLang = h('button', { class: 'lang', title: 'Dil / Language', 'aria-label': 'Dil / Language', onclick: () => setLang(LANG === 'tr' ? 'en' : 'tr') }, elLangTR, elLangEN);
+  // Dil seçici (başlıkta): her dil kendi adıyla listelenir. Değişiklik engellenirse (işlem sürüyor) eski değere döner.
+  const elLang = h('select', { class: 'btn lang', onchange: () => { setLang(elLang.value); elLang.value = LANG; } },
+    Object.keys(LANG_NAMES).filter(hasLang).map((c) => h('option', { value: c, text: LANG_NAMES[c], lang: c.replace('_', '-') })));
   const elReloadBtn = h('button', { class: 'icon', title: t('reload'), onclick: () => load() }, '↻');
   const elCloseBtn = h('button', { class: 'icon', title: t('close'), onclick: () => closePanel() }, '✕');
 
+  // İsteğe bağlı destek bağlantısı (GitHub Sponsors); diğer künye bağlantılarıyla aynı görünümde.
+  const elSupport = h('a', { href: 'https://github.com/sponsors/mustafacicek-eee', target: '_blank', rel: 'noopener noreferrer', title: 'GitHub Sponsors', text: t('support') });
   const panel = h('div', { class: 'panel', hidden: true, tabIndex: -1, role: 'dialog', 'aria-label': 'Playlist Multiselect' },
     h('div', { class: 'head' },
       h('div', { class: 'ttl' }, elTitle, elSub),
@@ -244,7 +162,9 @@
         'Mustafa Çiçek · ',
         h('a', { href: 'https://www.linkedin.com/in/mustafacicek-eee/', target: '_blank', rel: 'noopener noreferrer', text: 'LinkedIn' }),
         ' · ',
-        h('a', { href: 'https://github.com/mustafacicek-eee/youtube-playlist-multiselect', target: '_blank', rel: 'noopener noreferrer', text: 'GitHub' }))),
+        h('a', { href: 'https://github.com/mustafacicek-eee/youtube-playlist-multiselect', target: '_blank', rel: 'noopener noreferrer', text: 'GitHub' }),
+        ' · ',
+        elSupport)),
     elToast);
 
   shadow.appendChild(launcher);
@@ -256,8 +176,11 @@
 
   // ---------- Dil değiştirme ----------
   function syncLangToggle() {
-    elLangTR.classList.toggle('on', LANG === 'tr');
-    elLangEN.classList.toggle('on', LANG === 'en');
+    elLang.value = LANG;
+    elLang.title = t('langLabel');
+    elLang.setAttribute('aria-label', t('langLabel'));
+    panel.setAttribute('lang', LANG.replace('_', '-'));
+    launcher.setAttribute('lang', LANG.replace('_', '-'));
   }
   syncLangToggle();
   syncRegexUI();
@@ -275,19 +198,22 @@
     rebuildChannelOptions();
     for (const k of Object.keys(B)) B[k].textContent = t(k);
     elKeys.textContent = t('keys');
+    elSupport.textContent = t('support');
     elReloadBtn.title = t('reload');
     elCloseBtn.title = t('close');
     elToastClose.title = t('close');
     syncFilterMsg();
     const em = elList.querySelector('[data-empty]');
     if (em) em.textContent = t('empty');
+    const er = elList.querySelector('[data-error]');
+    if (er && S.loadError) er.textContent = t('error', errText(S.loadError)); // yükleme hatası da yeni dile çevrilir
     if (S.rows.size || em) updateSub(); // yükleme sürerken alt başlığa dokunma; ilerleme metni zaten yeni dille yazılır
     updateWarn();
     updateFooter();
     syncLangToggle();
   }
   function setLang(l) {
-    if (l === LANG || S.busy || modalOpen) return;
+    if (l === LANG || !hasLang(l) || S.busy || modalOpen) return;
     LANG = l;
     try { localStorage.setItem(LANG_KEY, l); } catch (_) { /* yok say */ }
     closeMenu();
@@ -357,7 +283,8 @@
       elTitle.textContent = id;
       elSub.textContent = '';
       clear(elList);
-      elList.appendChild(h('div', { class: 'empty', text: t('error', e.message) }));
+      S.loadError = e;
+      elList.appendChild(h('div', { class: 'empty', 'data-error': '1', text: t('error', errText(e)) }));
     }
     updateWarn();
     updateFooter();
@@ -758,7 +685,7 @@
     } catch (e) {
       console.warn('[Playlist Multiselect]', e, e && e.detail);
       progressClose();
-      toast(t('error', (e && e.message) || String(e)), null, true);
+      toast(t('error', errText(e)), null, true);
     } finally {
       progressClose();
       S.busy = false;

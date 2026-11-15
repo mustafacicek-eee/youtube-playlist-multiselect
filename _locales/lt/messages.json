@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Keleto žymėjimas grojaraščiuose, skirta „YouTube™“"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Keleto vaizdo įrašų žymėjimas „YouTube“ grojaraščiuose: kopijuokite, perkelkite, šalinkite, rikiuokite. Jokio sekimo."
+  },
+  "popupHint": {
+    "message": "Atidarykite grojaraštį „YouTube“ ir spustelėkite mygtuką „☑ Keleto žymėjimas“ apačioje kairėje."
+  },
+  "popupOpen": {
+    "message": "Atidaryti mano grojaraščius"
+  }
+}

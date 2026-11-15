@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Seleção múltipla de playlists para YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Seleção múltipla em playlists do YouTube: copie, mova, remova, ordene e encontre duplicados. Sem rastreio; só usa youtube.com."
+  },
+  "popupHint": {
+    "message": "Abra uma playlist no YouTube e clique no botão “☑ Seleção múltipla” no canto inferior esquerdo."
+  },
+  "popupOpen": {
+    "message": "Abrir as minhas playlists"
+  }
+}

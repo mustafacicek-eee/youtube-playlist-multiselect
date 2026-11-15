@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Multivalg i playlister til YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Multivalg i YouTube-playlister: kopiér, flyt, fjern, sortér, find dubletter. Ingen sporing; taler kun med youtube.com."
+  },
+  "popupHint": {
+    "message": "Åbn en playliste på YouTube, og klik på knappen ”☑ Multivalg” nederst til venstre."
+  },
+  "popupOpen": {
+    "message": "Åbn mine playlister"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Playlist-Mehrfachauswahl für YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Mehrfachauswahl in YouTube-Playlists: Kopieren, Verschieben, Entfernen, Sortieren, Duplikatsuche. Kein Tracking; nur youtube.com."
+  },
+  "popupHint": {
+    "message": "Öffne eine Playlist auf YouTube und klicke unten links auf „☑ Mehrfachauswahl“."
+  },
+  "popupOpen": {
+    "message": "Meine Playlists öffnen"
+  }
+}

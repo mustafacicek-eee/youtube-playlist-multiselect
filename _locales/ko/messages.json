@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "YouTube™용 재생목록 다중 선택"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "YouTube 재생목록에서 동영상 다중 선택: 복사, 이동, 삭제, 정렬, 중복 찾기. 추적 없음. youtube.com과만 통신합니다."
+  },
+  "popupHint": {
+    "message": "YouTube에서 재생목록을 연 다음 왼쪽 아래의 ‘☑ 다중 선택’ 버튼을 클릭하세요."
+  },
+  "popupOpen": {
+    "message": "내 재생목록 열기"
+  }
+}

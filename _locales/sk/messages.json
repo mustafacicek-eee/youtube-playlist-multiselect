@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Hromadný výber v playlistoch pre YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Hromadný výber v playlistoch YouTube: kopírovanie, presun, odstránenie, zoradenie, hľadanie duplikátov. Bez sledovania."
+  },
+  "popupHint": {
+    "message": "Otvorte playlist na YouTube a kliknite vľavo dole na tlačidlo „☑ Hromadný výber“."
+  },
+  "popupOpen": {
+    "message": "Otvoriť moje playlisty"
+  }
+}

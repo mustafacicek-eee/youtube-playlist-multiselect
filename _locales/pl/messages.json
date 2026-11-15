@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Zaznaczanie wielu filmów na playlistach YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Zaznaczanie wielu filmów na playlistach YouTube: kopiuj, przenoś, usuwaj, sortuj, szukaj duplikatów. Bez śledzenia."
+  },
+  "popupHint": {
+    "message": "Otwórz playlistę w YouTube i kliknij przycisk „☑ Zaznaczanie wielu” w lewym dolnym rogu."
+  },
+  "popupOpen": {
+    "message": "Otwórz moje playlisty"
+  }
+}

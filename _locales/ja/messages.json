@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "YouTube™ 再生リスト複数選択"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "YouTube の再生リストで動画を複数選択：コピー、移動、削除、並べ替え、重複の検出。トラッキングなし。通信先は youtube.com のみ。"
+  },
+  "popupHint": {
+    "message": "YouTube で再生リストを開き、左下の「☑ 複数選択」ボタンをクリックします。"
+  },
+  "popupOpen": {
+    "message": "再生リストを開く"
+  }
+}

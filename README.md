@@ -2,7 +2,7 @@
 
 **English** · [Türkçe](#türkçe)
 
-A Chrome extension (Manifest V3) that lets you select multiple videos in a YouTube playlist and act on them in bulk: copy, move, remove, sort, and find duplicates or deleted/private videos. The interface is available in English and Turkish and follows YouTube's language.
+A Chrome extension (Manifest V3) that lets you select multiple videos in a YouTube playlist and act on them in bulk: copy, move, remove, sort, and find duplicates or deleted/private videos. The interface is available in 29 languages and follows YouTube's language.
 
 **Author:** Mustafa Çiçek · [LinkedIn](https://www.linkedin.com/in/mustafacicek-eee/) · [GitHub](https://github.com/mustafacicek-eee)
 
@@ -38,7 +38,8 @@ Developers can also clone the repository and load it the same way: `git clone ht
 - **Sort playlist:** by title, channel, duration, reverse, shuffle. The result is re-read from the server and verified afterwards.
 - **Remove** (with confirmation) and **Re-add** (re-added videos go to the end)
 - Clipboard: `⌘/Ctrl+C` copy, `⌘/Ctrl+X` cut, switch playlists, `⌘/Ctrl+V` paste (works across tabs)
-- Context menu, light/dark theme, English/Turkish interface: switch with the **TR | EN** toggle in the panel header (your choice is remembered; by default it follows YouTube's language)
+- Context menu, light/dark theme
+- Interface in 29 languages: Catalan, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Latvian, Lithuanian, Norwegian, Polish, Portuguese (Brazil and Portugal), Russian, Slovak, Slovenian, Spanish (Spain and Latin America), Swedish, Turkish, Ukrainian and Vietnamese. Switch with the language menu in the panel header (your choice is remembered; by default it follows YouTube's language). English and Turkish are written by the developer; the other translations have not been reviewed by native speakers, so corrections are welcome via [issues](https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues).
 
 ## Privacy and security
 Full privacy policy: [PRIVACY.md](PRIVACY.md)
@@ -79,7 +80,7 @@ This project is not affiliated with or endorsed by YouTube or Google.
 
 ## Türkçe
 
-YouTube oynatma listelerinde birden fazla videoyu seçip toplu işlem yapmanı sağlayan Chrome eklentisi (Manifest V3): kopyala, taşı, kaldır, sırala, tekrarları ve silinmiş/özel videoları bul. Arayüz Türkçe ve İngilizcedir; YouTube'un diline göre seçilir.
+YouTube oynatma listelerinde birden fazla videoyu seçip toplu işlem yapmanı sağlayan Chrome eklentisi (Manifest V3): kopyala, taşı, kaldır, sırala, tekrarları ve silinmiş/özel videoları bul. Arayüz 29 dilde kullanılabilir; YouTube'un diline göre seçilir.
 
 **Geliştirici:** Mustafa Çiçek · [LinkedIn](https://www.linkedin.com/in/mustafacicek-eee/) · [GitHub](https://github.com/mustafacicek-eee)
 
@@ -108,7 +109,8 @@ Geliştiriciler repoyu klonlayıp aynı şekilde yükleyebilir: `git clone https
 - **Listeyi sırala**: başlık, kanal, süre, ters çevir, karıştır. İşlemden sonra sonuç sunucudan yeniden okunup doğrulanır.
 - **Kaldır** (onaylı) ve **Geri ekle** (geri eklenenler liste sonuna gider)
 - Pano: `⌘/Ctrl+C` kopyala, `⌘/Ctrl+X` kes, başka listeye geç, `⌘/Ctrl+V` yapıştır (sekmeler arasında da çalışır)
-- Sağ tık menüsü, açık/koyu tema, Türkçe/İngilizce arayüz: panel başlığındaki **TR | EN** düğmesiyle değiştirilir (seçim hatırlanır; seçim yapılmamışsa YouTube'un dili kullanılır)
+- Sağ tık menüsü, açık/koyu tema
+- 29 dilde arayüz: Almanca, Çekçe, Danca, Endonezce, Estonca, Felemenkçe, Fince, Fransızca, Hintçe, İngilizce, İspanyolca (İspanya ve Latin Amerika), İsveççe, İtalyanca, Japonca, Katalanca, Korece, Lehçe, Letonca, Litvanca, Norveççe, Portekizce (Brezilya ve Portekiz), Rusça, Slovakça, Slovence, Türkçe, Ukraynaca ve Vietnamca. Panel başlığındaki dil menüsünden değiştirilir (seçim hatırlanır; seçim yapılmamışsa YouTube'un dili kullanılır). Türkçe ve İngilizce geliştirici tarafından yazıldı; diğer çeviriler anadili konuşanlarca gözden geçirilmedi, düzeltmeler için [issue](https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues) açabilirsin.
 
 ### Gizlilik ve güvenlik
 Gizlilik politikasının tamamı: [PRIVACY.md](PRIVACY.md)

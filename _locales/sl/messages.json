@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Večkratna izbira na seznamih za YouTube™"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Večkratna izbira na seznamih YouTube: kopiranje, premikanje, odstranjevanje, razvrščanje, iskanje dvojnikov. Brez sledenja."
+  },
+  "popupHint": {
+    "message": "Odprite seznam predvajanja v YouTubu in spodaj levo kliknite gumb »☑ Večkratna izbira«."
+  },
+  "popupOpen": {
+    "message": "Odpri moje sezname"
+  }
+}

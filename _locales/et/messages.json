@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Esitusloendite mitmikvalik YouTube™-i jaoks"
+  },
+  "extShortName": {
+    "message": "PL Multiselect"
+  },
+  "extDesc": {
+    "message": "Mitmikvalik YouTube’i esitusloendites: kopeeri, teisalda, eemalda, sordi, leia duplikaadid. Jälgimist pole; ainult youtube.com."
+  },
+  "popupHint": {
+    "message": "Avage YouTube’is esitusloend ja klõpsake all vasakul nuppu „☑ Mitmikvalik“."
+  },
+  "popupOpen": {
+    "message": "Ava minu esitusloendid"
+  }
+}

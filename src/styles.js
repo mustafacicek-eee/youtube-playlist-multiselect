@@ -36,10 +36,7 @@ button, input, select { font: inherit; color: inherit; }
 .head .sub { color: var(--fg2); font-size: 12px; margin-top: 2px; }
 .icon { border: 0; background: transparent; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 16px; line-height: 32px; }
 .icon:hover { background: var(--bg2); }
-.lang { display: flex; gap: 2px; padding: 3px; border: 0; border-radius: 16px; background: var(--bg2); cursor: pointer; }
-.lang span { padding: 4px 9px; border-radius: 13px; font-size: 12px; font-weight: 600; color: var(--fg2); }
-.lang span.on { background: var(--fg); color: var(--bg); }
-.lang:hover span:not(.on) { color: var(--fg); }
+.lang { max-width: 150px; font-size: 12px; text-overflow: ellipsis; }
 .bar { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 12px 8px; align-items: center; }
 .btn {
   border: 0; background: var(--bg2); padding: 6px 12px; border-radius: 16px; cursor: pointer; white-space: nowrap;
@@ -56,7 +53,7 @@ button, input, select { font: inherit; color: inherit; }
 }
 .search:focus { border-color: var(--accent); }
 .search.bad, .search.bad:focus { border-color: var(--danger); }
-.btn.re { font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 600; padding: 6px 10px; }
+.btn.re { font-size: 12px; font-weight: 600; padding: 6px 10px; }
 .btn.re.on { background: var(--accent); color: #fff; }
 :host([data-theme="dark"]) .btn.re.on { color: #0f0f0f; }
 select.btn { appearance: auto; padding-right: 8px; }
