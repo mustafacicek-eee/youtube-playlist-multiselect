@@ -65,6 +65,9 @@ Full privacy policy: [PRIVACY.md](PRIVACY.md)
 - Auto-generated mixes (`RD…`) cannot be edited, only copied.
 - After a change, YouTube's own page may still show the old state; use **Refresh page** in the panel.
 
+## Feedback and support
+The extension is free and open source. Bug reports and ideas are the most useful contribution: [open an issue](https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues). For those who ask, there is also a [GitHub Sponsors](https://github.com/sponsors/mustafacicek-eee) page; it is entirely optional.
+
 ## License
 [MIT](LICENSE) © 2026 Mustafa Çiçek. You may use, change and share this code; the copyright notice must be kept.
 
@@ -131,6 +134,9 @@ Gizlilik politikasının tamamı: [PRIVACY.md](PRIVACY.md)
 - YouTube'un gizlediği erişilemeyen videolar ana listede görünmez; **Silinmiş/özel videoları bul** ile ayrıca taranır.
 - Otomatik karışık listeler (`RD…`) düzenlenemez, yalnızca kopyalanabilir.
 - Değişiklikten sonra YouTube'un kendi sayfası eski hâli gösterebilir; paneldeki **Sayfayı yenile** ile güncelle.
+
+### Geri bildirim ve destek
+Eklenti ücretsiz ve açık kaynaklıdır. En değerli katkı hata bildirimi ve fikirlerdir: [bir issue aç](https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues). Soranlar için bir [GitHub Sponsors](https://github.com/sponsors/mustafacicek-eee) sayfası da var; tamamen isteğe bağlıdır.
 
 ### Lisans
 [MIT](LICENSE) © 2026 Mustafa Çiçek. Kodu kullanabilir, değiştirebilir ve paylaşabilirsin; telif satırının korunması gerekir.
