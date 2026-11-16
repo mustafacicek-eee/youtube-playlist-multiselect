@@ -53,7 +53,7 @@
       deadRemove: 'Seçilenleri kaldır', deadNoUndo: 'Bu videolar zaten izlenemiyor; bu işlemin geri alma seçeneği yok.',
       deadLogin: 'Kaldırmak için YouTube’a giriş yapmalı ve listenin sahibi olmalısın.', deadDone: '{0} silinmiş/özel video kaldırıldı ve doğrulandı.',
       deadPartial: '{0} video kaldırıldı; {1} video hâlâ listede görünüyor. YouTube isteği uygulamamış olabilir, bir süre sonra tekrar dene.', total: 'toplam {0}', keys: 'Kısayollar: ⇧ tık = aralık, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = kaldır, Esc',
-      langLabel: 'Dil', support: 'Destek', errNoCfg: 'YouTube yapılandırması (ytcfg) bulunamadı. Sayfayı yenileyin.', errListRead: 'Liste okunamadı (gizli, silinmiş ya da erişim yok olabilir).',
+      langLabel: 'Dil', support: 'Destek ol', errNoCfg: 'YouTube yapılandırması (ytcfg) bulunamadı. Sayfayı yenileyin.', errListRead: 'Liste okunamadı (gizli, silinmiş ya da erişim yok olabilir).',
       errEditFailed: 'Liste düzenleme başarısız: {0}', errCreate: 'Liste oluşturulamadı.', errSafety: 'Güvenlik denetimi: beklenmeyen video kimliği.',
     },
     en: {
@@ -99,7 +99,7 @@
       deadRemove: 'Remove selected', deadNoUndo: 'These videos are already unwatchable; this cannot be undone.',
       deadLogin: 'Sign in to YouTube and own this playlist to remove them.', deadDone: '{0} deleted/private videos removed and verified.',
       deadPartial: '{0} removed; {1} still appear in the playlist. YouTube may not have applied the request, try again later.', total: 'total {0}', keys: 'Shortcuts: ⇧ click = range, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = remove, Esc',
-      langLabel: 'Language', support: 'Support', errNoCfg: 'YouTube configuration (ytcfg) not found. Refresh the page.', errListRead: 'Could not read the playlist (it may be private, deleted or inaccessible).',
+      langLabel: 'Language', support: 'Support me', errNoCfg: 'YouTube configuration (ytcfg) not found. Refresh the page.', errListRead: 'Could not read the playlist (it may be private, deleted or inaccessible).',
       errEditFailed: 'Playlist edit failed: {0}', errCreate: 'Could not create the playlist.', errSafety: 'Safety check: unexpected video ID.',
     },
     es: {
@@ -145,7 +145,7 @@
       deadRemove: 'Quitar seleccionados', deadNoUndo: 'Estos vídeos ya no se pueden ver; esta acción no se puede deshacer.',
       deadLogin: 'Para quitarlos debes iniciar sesión en YouTube y ser el propietario de la lista.', deadDone: '{0} vídeos eliminados/privados quitados y verificados.',
       deadPartial: '{0} quitados; {1} siguen apareciendo en la lista. Puede que YouTube no haya aplicado la solicitud; inténtalo más tarde.', total: 'total {0}', keys: 'Atajos: ⇧ clic = rango, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Supr = quitar, Esc',
-      langLabel: 'Idioma', support: 'Apoyar', errNoCfg: 'No se ha encontrado la configuración de YouTube (ytcfg). Actualiza la página.', errListRead: 'No se ha podido leer la lista (puede ser privada, estar eliminada o no tener acceso).',
+      langLabel: 'Idioma', support: 'Apóyame', errNoCfg: 'No se ha encontrado la configuración de YouTube (ytcfg). Actualiza la página.', errListRead: 'No se ha podido leer la lista (puede ser privada, estar eliminada o no tener acceso).',
       errEditFailed: 'Error al editar la lista: {0}', errCreate: 'No se ha podido crear la lista.', errSafety: 'Comprobación de seguridad: ID de vídeo inesperado.',
     },
     pt_BR: {
@@ -191,7 +191,7 @@
       deadRemove: 'Remover selecionados', deadNoUndo: 'Estes vídeos já não podem ser assistidos; esta ação não pode ser desfeita.',
       deadLogin: 'Para removê-los, faça login no YouTube e seja o proprietário da playlist.', deadDone: '{0} vídeos excluídos/privados removidos e verificados.',
       deadPartial: '{0} removidos; {1} ainda aparecem na playlist. O YouTube pode não ter aplicado a solicitação; tente mais tarde.', total: 'total {0}', keys: 'Atalhos: ⇧ clique = intervalo, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = remover, Esc',
-      langLabel: 'Idioma', support: 'Apoiar', errNoCfg: 'A configuração do YouTube (ytcfg) não foi encontrada. Atualize a página.', errListRead: 'Não foi possível ler a playlist (pode ser privada, ter sido excluída ou estar inacessível).',
+      langLabel: 'Idioma', support: 'Apoie-me', errNoCfg: 'A configuração do YouTube (ytcfg) não foi encontrada. Atualize a página.', errListRead: 'Não foi possível ler a playlist (pode ser privada, ter sido excluída ou estar inacessível).',
       errEditFailed: 'Falha ao editar a playlist: {0}', errCreate: 'Não foi possível criar a playlist.', errSafety: 'Verificação de segurança: ID de vídeo inesperado.',
     },
     pt_PT: {
@@ -237,7 +237,7 @@
       deadRemove: 'Remover selecionados', deadNoUndo: 'Estes vídeos já não podem ser vistos; esta ação não pode ser anulada.',
       deadLogin: 'Para os remover, tem de iniciar sessão no YouTube e ser o proprietário da playlist.', deadDone: '{0} vídeos eliminados/privados removidos e verificados.',
       deadPartial: '{0} removidos; {1} continuam a aparecer na playlist. O YouTube pode não ter aplicado o pedido; tente mais tarde.', total: 'total {0}', keys: 'Atalhos: ⇧ clique = intervalo, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = remover, Esc',
-      langLabel: 'Idioma', support: 'Apoiar', errNoCfg: 'A configuração do YouTube (ytcfg) não foi encontrada. Atualize a página.', errListRead: 'Não foi possível ler a playlist (pode ser privada, ter sido eliminada ou estar inacessível).',
+      langLabel: 'Idioma', support: 'Apoie-me', errNoCfg: 'A configuração do YouTube (ytcfg) não foi encontrada. Atualize a página.', errListRead: 'Não foi possível ler a playlist (pode ser privada, ter sido eliminada ou estar inacessível).',
       errEditFailed: 'Falha ao editar a playlist: {0}', errCreate: 'Não foi possível criar a playlist.', errSafety: 'Verificação de segurança: ID de vídeo inesperado.',
     },
     de: {
@@ -283,7 +283,7 @@
       deadRemove: 'Ausgewählte entfernen', deadNoUndo: 'Diese Videos sind ohnehin nicht mehr abspielbar; das lässt sich nicht rückgängig machen.',
       deadLogin: 'Zum Entfernen musst du bei YouTube angemeldet sein und die Playlist muss dir gehören.', deadDone: '{0} gelöschte/private Videos entfernt und überprüft.',
       deadPartial: '{0} entfernt; {1} erscheinen weiterhin in der Playlist. YouTube hat die Anfrage möglicherweise nicht umgesetzt; versuche es später erneut.', total: 'gesamt {0}', keys: 'Tastenkürzel: ⇧ Klick = Bereich, ⌘/Strg+A, ⌘/Strg+C/X/V, Entf = entfernen, Esc',
-      langLabel: 'Sprache', support: 'Unterstützen', errNoCfg: 'YouTube-Konfiguration (ytcfg) nicht gefunden. Aktualisiere die Seite.', errListRead: 'Die Playlist konnte nicht gelesen werden (möglicherweise privat, gelöscht oder kein Zugriff).',
+      langLabel: 'Sprache', support: 'Unterstütze mich', errNoCfg: 'YouTube-Konfiguration (ytcfg) nicht gefunden. Aktualisiere die Seite.', errListRead: 'Die Playlist konnte nicht gelesen werden (möglicherweise privat, gelöscht oder kein Zugriff).',
       errEditFailed: 'Bearbeiten der Playlist fehlgeschlagen: {0}', errCreate: 'Die Playlist konnte nicht erstellt werden.', errSafety: 'Sicherheitsprüfung: unerwartete Video-ID.',
     },
     fr: {
@@ -329,7 +329,7 @@
       deadRemove: 'Retirer la sélection', deadNoUndo: 'Ces vidéos sont déjà impossibles à regarder ; cette action est irréversible.',
       deadLogin: 'Pour les retirer, connectez-vous à YouTube et soyez propriétaire de la playlist.', deadDone: '{0} vidéos supprimées/privées retirées et vérifiées.',
       deadPartial: '{0} retirées ; {1} apparaissent encore dans la playlist. YouTube n’a peut-être pas appliqué la demande ; réessayez plus tard.', total: 'total {0}', keys: 'Raccourcis : ⇧ clic = plage, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Suppr = retirer, Échap',
-      langLabel: 'Langue', support: 'Soutenir', errNoCfg: 'Configuration YouTube (ytcfg) introuvable. Actualisez la page.', errListRead: 'Impossible de lire la playlist (elle est peut-être privée, supprimée ou inaccessible).',
+      langLabel: 'Langue', support: 'Me soutenir', errNoCfg: 'Configuration YouTube (ytcfg) introuvable. Actualisez la page.', errListRead: 'Impossible de lire la playlist (elle est peut-être privée, supprimée ou inaccessible).',
       errEditFailed: 'Échec de la modification de la playlist : {0}', errCreate: 'Impossible de créer la playlist.', errSafety: 'Contrôle de sécurité : identifiant de vidéo inattendu.',
     },
     it: {
@@ -375,7 +375,7 @@
       deadRemove: 'Rimuovi selezionati', deadNoUndo: 'Questi video non sono già più riproducibili; l’operazione non può essere annullata.',
       deadLogin: 'Per rimuoverli devi accedere a YouTube ed essere il proprietario della playlist.', deadDone: '{0} video eliminati/privati rimossi e verificati.',
       deadPartial: '{0} rimossi; {1} compaiono ancora nella playlist. YouTube potrebbe non aver applicato la richiesta; riprova più tardi.', total: 'totale {0}', keys: 'Scorciatoie: ⇧ clic = intervallo, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Canc = rimuovi, Esc',
-      langLabel: 'Lingua', support: 'Sostieni', errNoCfg: 'Configurazione di YouTube (ytcfg) non trovata. Aggiorna la pagina.', errListRead: 'Impossibile leggere la playlist (potrebbe essere privata, eliminata o non accessibile).',
+      langLabel: 'Lingua', support: 'Sostienimi', errNoCfg: 'Configurazione di YouTube (ytcfg) non trovata. Aggiorna la pagina.', errListRead: 'Impossibile leggere la playlist (potrebbe essere privata, eliminata o non accessibile).',
       errEditFailed: 'Modifica della playlist non riuscita: {0}', errCreate: 'Impossibile creare la playlist.', errSafety: 'Controllo di sicurezza: ID video imprevisto.',
     },
     nl: {
@@ -421,7 +421,7 @@
       deadRemove: 'Selectie weghalen', deadNoUndo: 'Deze video’s zijn al niet meer te bekijken; dit kan niet ongedaan worden gemaakt.',
       deadLogin: 'Log in bij YouTube en wees eigenaar van de playlist om ze weg te halen.', deadDone: '{0} verwijderde/privévideo’s weggehaald en gecontroleerd.',
       deadPartial: '{0} weggehaald; {1} staan nog in de playlist. YouTube heeft het verzoek mogelijk niet uitgevoerd; probeer het later opnieuw.', total: 'totaal {0}', keys: 'Sneltoetsen: ⇧ klik = bereik, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = verwijderen, Esc',
-      langLabel: 'Taal', support: 'Steunen', errNoCfg: 'YouTube-configuratie (ytcfg) niet gevonden. Vernieuw de pagina.', errListRead: 'De playlist kon niet worden gelezen (mogelijk privé, verwijderd of geen toegang).',
+      langLabel: 'Taal', support: 'Steun mij', errNoCfg: 'YouTube-configuratie (ytcfg) niet gevonden. Vernieuw de pagina.', errListRead: 'De playlist kon niet worden gelezen (mogelijk privé, verwijderd of geen toegang).',
       errEditFailed: 'Bewerken van de playlist mislukt: {0}', errCreate: 'De playlist kon niet worden gemaakt.', errSafety: 'Veiligheidscontrole: onverwachte video-ID.',
     },
     ca: {
@@ -467,7 +467,7 @@
       deadRemove: 'Treu els seleccionats', deadNoUndo: 'Aquests vídeos ja no es poden veure; aquesta acció no es pot desfer.',
       deadLogin: 'Per treure’ls has d’iniciar la sessió a YouTube i ser el propietari de la llista.', deadDone: 'S’han tret i verificat {0} vídeos suprimits/privats.',
       deadPartial: 'Se n’han tret {0}; {1} encara apareixen a la llista. Pot ser que YouTube no hagi aplicat la sol·licitud; torna-ho a provar més tard.', total: 'total {0}', keys: 'Dreceres: ⇧ clic = interval, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Supr = treu, Esc',
-      langLabel: 'Idioma', support: 'Dona suport', errNoCfg: 'No s’ha trobat la configuració de YouTube (ytcfg). Actualitza la pàgina.', errListRead: 'No s’ha pogut llegir la llista (pot ser privada, suprimida o inaccessible).',
+      langLabel: 'Idioma', support: 'Dona’m suport', errNoCfg: 'No s’ha trobat la configuració de YouTube (ytcfg). Actualitza la pàgina.', errListRead: 'No s’ha pogut llegir la llista (pot ser privada, suprimida o inaccessible).',
       errEditFailed: 'No s’ha pogut editar la llista: {0}', errCreate: 'No s’ha pogut crear la llista.', errSafety: 'Comprovació de seguretat: ID de vídeo inesperat.',
     },
     sv: {
@@ -513,7 +513,7 @@
       deadRemove: 'Ta bort markerade', deadNoUndo: 'De här videorna går redan inte att titta på; åtgärden kan inte ångras.',
       deadLogin: 'Logga in på YouTube och äg spellistan för att kunna ta bort dem.', deadDone: '{0} raderade/privata videor har tagits bort och verifierats.',
       deadPartial: '{0} har tagits bort; {1} visas fortfarande i spellistan. YouTube kanske inte har genomfört begäran; försök igen senare.', total: 'totalt {0}', keys: 'Kortkommandon: ⇧ klick = intervall, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = ta bort, Esc',
-      langLabel: 'Språk', support: 'Stöd', errNoCfg: 'YouTube-konfigurationen (ytcfg) hittades inte. Uppdatera sidan.', errListRead: 'Spellistan kunde inte läsas (den kan vara privat, raderad eller otillgänglig).',
+      langLabel: 'Språk', support: 'Stöd mig', errNoCfg: 'YouTube-konfigurationen (ytcfg) hittades inte. Uppdatera sidan.', errListRead: 'Spellistan kunde inte läsas (den kan vara privat, raderad eller otillgänglig).',
       errEditFailed: 'Det gick inte att redigera spellistan: {0}', errCreate: 'Det gick inte att skapa spellistan.', errSafety: 'Säkerhetskontroll: oväntat video-ID.',
     },
     no: {
@@ -559,7 +559,7 @@
       deadRemove: 'Fjern valgte', deadNoUndo: 'Disse videoene kan allerede ikke ses; dette kan ikke angres.',
       deadLogin: 'Logg på YouTube og vær eier av spillelisten for å fjerne dem.', deadDone: '{0} slettede/private videoer er fjernet og bekreftet.',
       deadPartial: '{0} er fjernet; {1} vises fortsatt i spillelisten. YouTube har kanskje ikke utført forespørselen; prøv igjen senere.', total: 'totalt {0}', keys: 'Hurtigtaster: ⇧ klikk = område, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = fjern, Esc',
-      langLabel: 'Språk', support: 'Støtt', errNoCfg: 'Fant ikke YouTube-konfigurasjonen (ytcfg). Oppdater siden.', errListRead: 'Spillelisten kunne ikke leses (den kan være privat, slettet eller utilgjengelig).',
+      langLabel: 'Språk', support: 'Støtt meg', errNoCfg: 'Fant ikke YouTube-konfigurasjonen (ytcfg). Oppdater siden.', errListRead: 'Spillelisten kunne ikke leses (den kan være privat, slettet eller utilgjengelig).',
       errEditFailed: 'Kunne ikke redigere spillelisten: {0}', errCreate: 'Kunne ikke opprette spillelisten.', errSafety: 'Sikkerhetskontroll: uventet video-ID.',
     },
     da: {
@@ -605,7 +605,7 @@
       deadRemove: 'Fjern valgte', deadNoUndo: 'Disse videoer kan allerede ikke ses; dette kan ikke fortrydes.',
       deadLogin: 'Log ind på YouTube, og vær ejer af playlisten for at fjerne dem.', deadDone: '{0} slettede/private videoer er fjernet og bekræftet.',
       deadPartial: '{0} er fjernet; {1} vises stadig i playlisten. YouTube har måske ikke gennemført anmodningen; prøv igen senere.', total: 'i alt {0}', keys: 'Genveje: ⇧ klik = interval, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = fjern, Esc',
-      langLabel: 'Sprog', support: 'Støt', errNoCfg: 'YouTube-konfigurationen (ytcfg) blev ikke fundet. Opdater siden.', errListRead: 'Playlisten kunne ikke læses (den kan være privat, slettet eller utilgængelig).',
+      langLabel: 'Sprog', support: 'Støt mig', errNoCfg: 'YouTube-konfigurationen (ytcfg) blev ikke fundet. Opdater siden.', errListRead: 'Playlisten kunne ikke læses (den kan være privat, slettet eller utilgængelig).',
       errEditFailed: 'Playlisten kunne ikke redigeres: {0}', errCreate: 'Playlisten kunne ikke oprettes.', errSafety: 'Sikkerhedstjek: uventet video-id.',
     },
     fi: {
@@ -651,7 +651,7 @@
       deadRemove: 'Poista valitut', deadNoUndo: 'Näitä videoita ei voi enää katsoa; toimintoa ei voi kumota.',
       deadLogin: 'Poistaminen edellyttää, että olet kirjautunut YouTubeen ja omistat soittolistan.', deadDone: 'Poistettu ja tarkistettu poistettuja/yksityisiä videoita: {0}.',
       deadPartial: 'Poistettu: {0}; soittolistassa näkyy edelleen: {1}. YouTube ei ehkä toteuttanut pyyntöä; yritä myöhemmin uudelleen.', total: 'yhteensä {0}', keys: 'Pikanäppäimet: ⇧ klikkaus = alue, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = poista, Esc',
-      langLabel: 'Kieli', support: 'Tue', errNoCfg: 'YouTuben määrityksiä (ytcfg) ei löytynyt. Päivitä sivu.', errListRead: 'Soittolistaa ei voitu lukea (se voi olla yksityinen, poistettu tai ei käytettävissä).',
+      langLabel: 'Kieli', support: 'Tue minua', errNoCfg: 'YouTuben määrityksiä (ytcfg) ei löytynyt. Päivitä sivu.', errListRead: 'Soittolistaa ei voitu lukea (se voi olla yksityinen, poistettu tai ei käytettävissä).',
       errEditFailed: 'Soittolistan muokkaus epäonnistui: {0}', errCreate: 'Soittolistaa ei voitu luoda.', errSafety: 'Turvatarkistus: odottamaton videon tunnus.',
     },
     ru: {
@@ -697,7 +697,7 @@
       deadRemove: 'Убрать выбранные', deadNoUndo: 'Эти видео и так нельзя посмотреть; действие нельзя отменить.',
       deadLogin: 'Чтобы убрать их, войдите в YouTube; плейлист должен принадлежать вам.', deadDone: 'Убрано и проверено удалённых/закрытых видео: {0}.',
       deadPartial: 'Убрано: {0}; всё ещё отображается в плейлисте: {1}. Возможно, YouTube не выполнил запрос; повторите попытку позже.', total: 'всего {0}', keys: 'Клавиши: ⇧ клик = диапазон, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = убрать, Esc',
-      langLabel: 'Язык', support: 'Поддержать', errNoCfg: 'Конфигурация YouTube (ytcfg) не найдена. Обновите страницу.', errListRead: 'Не удалось прочитать плейлист (возможно, он закрыт, удалён или недоступен).',
+      langLabel: 'Язык', support: 'Поддержать меня', errNoCfg: 'Конфигурация YouTube (ytcfg) не найдена. Обновите страницу.', errListRead: 'Не удалось прочитать плейлист (возможно, он закрыт, удалён или недоступен).',
       errEditFailed: 'Не удалось изменить плейлист: {0}', errCreate: 'Не удалось создать плейлист.', errSafety: 'Проверка безопасности: неожиданный идентификатор видео.',
     },
     uk: {
@@ -743,7 +743,7 @@
       deadRemove: 'Вилучити вибрані', deadNoUndo: 'Ці відео й так не можна переглянути; дію не можна скасувати.',
       deadLogin: 'Щоб вилучити їх, увійдіть у YouTube; список має належати вам.', deadDone: 'Вилучено й перевірено видалених/приватних відео: {0}.',
       deadPartial: 'Вилучено: {0}; досі відображається у списку: {1}. Можливо, YouTube не виконав запит; спробуйте пізніше.', total: 'усього {0}', keys: 'Клавіші: ⇧ клік = діапазон, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = вилучити, Esc',
-      langLabel: 'Мова', support: 'Підтримати', errNoCfg: 'Конфігурацію YouTube (ytcfg) не знайдено. Оновіть сторінку.', errListRead: 'Не вдалося прочитати список (можливо, він приватний, видалений або недоступний).',
+      langLabel: 'Мова', support: 'Підтримати мене', errNoCfg: 'Конфігурацію YouTube (ytcfg) не знайдено. Оновіть сторінку.', errListRead: 'Не вдалося прочитати список (можливо, він приватний, видалений або недоступний).',
       errEditFailed: 'Не вдалося змінити список: {0}', errCreate: 'Не вдалося створити список.', errSafety: 'Перевірка безпеки: неочікуваний ідентифікатор відео.',
     },
     pl: {
@@ -789,7 +789,7 @@
       deadRemove: 'Usuń zaznaczone', deadNoUndo: 'Tych filmów i tak nie można już obejrzeć; tej operacji nie można cofnąć.',
       deadLogin: 'Aby je usunąć, zaloguj się w YouTube i bądź właścicielem playlisty.', deadDone: 'Usunięto i sprawdzono usunięte/prywatne filmy: {0}.',
       deadPartial: 'Usunięto: {0}; nadal widoczne na playliście: {1}. YouTube mógł nie wykonać żądania; spróbuj później.', total: 'łącznie {0}', keys: 'Skróty: ⇧ klik = zakres, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = usuń, Esc',
-      langLabel: 'Język', support: 'Wesprzyj', errNoCfg: 'Nie znaleziono konfiguracji YouTube (ytcfg). Odśwież stronę.', errListRead: 'Nie udało się odczytać playlisty (może być prywatna, usunięta lub niedostępna).',
+      langLabel: 'Język', support: 'Wesprzyj mnie', errNoCfg: 'Nie znaleziono konfiguracji YouTube (ytcfg). Odśwież stronę.', errListRead: 'Nie udało się odczytać playlisty (może być prywatna, usunięta lub niedostępna).',
       errEditFailed: 'Nie udało się edytować playlisty: {0}', errCreate: 'Nie udało się utworzyć playlisty.', errSafety: 'Kontrola bezpieczeństwa: nieoczekiwany identyfikator filmu.',
     },
     cs: {
@@ -835,7 +835,7 @@
       deadRemove: 'Odebrat vybraná', deadNoUndo: 'Tato videa už stejně nelze přehrát; akci nelze vrátit zpět.',
       deadLogin: 'Chcete-li je odebrat, přihlaste se k YouTube a buďte vlastníkem playlistu.', deadDone: 'Odebraná a ověřená smazaná/soukromá videa: {0}.',
       deadPartial: 'Odebráno: {0}; v playlistu se stále zobrazuje: {1}. YouTube možná požadavek neprovedl; zkuste to později.', total: 'celkem {0}', keys: 'Zkratky: ⇧ klik = rozsah, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = odebrat, Esc',
-      langLabel: 'Jazyk', support: 'Podpořit', errNoCfg: 'Konfigurace YouTube (ytcfg) nebyla nalezena. Obnovte stránku.', errListRead: 'Playlist se nepodařilo načíst (může být soukromý, smazaný nebo nedostupný).',
+      langLabel: 'Jazyk', support: 'Podpořte mě', errNoCfg: 'Konfigurace YouTube (ytcfg) nebyla nalezena. Obnovte stránku.', errListRead: 'Playlist se nepodařilo načíst (může být soukromý, smazaný nebo nedostupný).',
       errEditFailed: 'Úprava playlistu se nezdařila: {0}', errCreate: 'Playlist se nepodařilo vytvořit.', errSafety: 'Bezpečnostní kontrola: neočekávané ID videa.',
     },
     sk: {
@@ -881,7 +881,7 @@
       deadRemove: 'Odobrať vybrané', deadNoUndo: 'Tieto videá sa už aj tak nedajú prehrať; akciu nemožno vrátiť späť.',
       deadLogin: 'Ak ich chcete odobrať, prihláste sa do služby YouTube a buďte vlastníkom playlistu.', deadDone: 'Odobraté a overené odstránené/súkromné videá: {0}.',
       deadPartial: 'Odobraté: {0}; v playliste sa stále zobrazuje: {1}. YouTube možno požiadavku nevykonal; skúste to neskôr.', total: 'spolu {0}', keys: 'Skratky: ⇧ klik = rozsah, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = odstrániť, Esc',
-      langLabel: 'Jazyk', support: 'Podporiť', errNoCfg: 'Konfigurácia YouTube (ytcfg) sa nenašla. Obnovte stránku.', errListRead: 'Playlist sa nepodarilo načítať (môže byť súkromný, odstránený alebo nedostupný).',
+      langLabel: 'Jazyk', support: 'Podporte ma', errNoCfg: 'Konfigurácia YouTube (ytcfg) sa nenašla. Obnovte stránku.', errListRead: 'Playlist sa nepodarilo načítať (môže byť súkromný, odstránený alebo nedostupný).',
       errEditFailed: 'Úprava playlistu zlyhala: {0}', errCreate: 'Playlist sa nepodarilo vytvoriť.', errSafety: 'Bezpečnostná kontrola: neočakávané ID videa.',
     },
     sl: {
@@ -927,7 +927,7 @@
       deadRemove: 'Odstrani izbrane', deadNoUndo: 'Teh videoposnetkov že zdaj ni mogoče gledati; dejanja ni mogoče razveljaviti.',
       deadLogin: 'Za odstranitev se prijavite v YouTube in bodite lastnik seznama.', deadDone: 'Odstranjeni in preverjeni izbrisani/zasebni videoposnetki: {0}.',
       deadPartial: 'Odstranjeno: {0}; na seznamu se še prikazuje: {1}. YouTube morda ni izvedel zahteve; poskusite pozneje.', total: 'skupaj {0}', keys: 'Bližnjice: ⇧ klik = obseg, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = odstrani, Esc',
-      langLabel: 'Jezik', support: 'Podpri', errNoCfg: 'Konfiguracije YouTube (ytcfg) ni bilo mogoče najti. Osvežite stran.', errListRead: 'Seznama ni bilo mogoče prebrati (morda je zaseben, izbrisan ali nedostopen).',
+      langLabel: 'Jezik', support: 'Podpri me', errNoCfg: 'Konfiguracije YouTube (ytcfg) ni bilo mogoče najti. Osvežite stran.', errListRead: 'Seznama ni bilo mogoče prebrati (morda je zaseben, izbrisan ali nedostopen).',
       errEditFailed: 'Urejanje seznama ni uspelo: {0}', errCreate: 'Seznama ni bilo mogoče ustvariti.', errSafety: 'Varnostno preverjanje: nepričakovan ID videoposnetka.',
     },
     lt: {
@@ -973,7 +973,7 @@
       deadRemove: 'Pašalinti pažymėtus', deadNoUndo: 'Šių vaizdo įrašų ir taip nebegalima žiūrėti; veiksmo atšaukti negalima.',
       deadLogin: 'Norėdami juos pašalinti, prisijunkite prie „YouTube“ ir būkite grojaraščio savininkas.', deadDone: 'Pašalinta ir patikrinta ištrintų / privačių vaizdo įrašų: {0}.',
       deadPartial: 'Pašalinta: {0}; grojaraštyje vis dar rodoma: {1}. „YouTube“ galėjo neįvykdyti užklausos; bandykite vėliau.', total: 'iš viso {0}', keys: 'Spartieji klavišai: ⇧ spustelėjimas = intervalas, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = pašalinti, Esc',
-      langLabel: 'Kalba', support: 'Paremti', errNoCfg: '„YouTube“ konfigūracija (ytcfg) nerasta. Atnaujinkite puslapį.', errListRead: 'Nepavyko nuskaityti grojaraščio (jis gali būti privatus, ištrintas arba nepasiekiamas).',
+      langLabel: 'Kalba', support: 'Paremkite mane', errNoCfg: '„YouTube“ konfigūracija (ytcfg) nerasta. Atnaujinkite puslapį.', errListRead: 'Nepavyko nuskaityti grojaraščio (jis gali būti privatus, ištrintas arba nepasiekiamas).',
       errEditFailed: 'Nepavyko redaguoti grojaraščio: {0}', errCreate: 'Nepavyko sukurti grojaraščio.', errSafety: 'Saugos patikra: netikėtas vaizdo įrašo ID.',
     },
     lv: {
@@ -1019,7 +1019,7 @@
       deadRemove: 'Noņemt atlasītos', deadNoUndo: 'Šos videoklipus jau tāpat nevar skatīties; darbību nevar atsaukt.',
       deadLogin: 'Lai tos noņemtu, pierakstieties pakalpojumā YouTube un esiet atskaņošanas saraksta īpašnieks.', deadDone: 'Noņemti un pārbaudīti dzēstie/privātie videoklipi: {0}.',
       deadPartial: 'Noņemti: {0}; atskaņošanas sarakstā joprojām redzami: {1}. Iespējams, YouTube neizpildīja pieprasījumu; mēģiniet vēlāk.', total: 'kopā {0}', keys: 'Īsinājumtaustiņi: ⇧ klikšķis = diapazons, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = noņemt, Esc',
-      langLabel: 'Valoda', support: 'Atbalstīt', errNoCfg: 'YouTube konfigurācija (ytcfg) nav atrasta. Atsvaidziniet lapu.', errListRead: 'Atskaņošanas sarakstu neizdevās nolasīt (tas var būt privāts, dzēsts vai nepieejams).',
+      langLabel: 'Valoda', support: 'Atbalstiet mani', errNoCfg: 'YouTube konfigurācija (ytcfg) nav atrasta. Atsvaidziniet lapu.', errListRead: 'Atskaņošanas sarakstu neizdevās nolasīt (tas var būt privāts, dzēsts vai nepieejams).',
       errEditFailed: 'Neizdevās rediģēt atskaņošanas sarakstu: {0}', errCreate: 'Neizdevās izveidot atskaņošanas sarakstu.', errSafety: 'Drošības pārbaude: neparedzēts videoklipa ID.',
     },
     et: {
@@ -1065,7 +1065,7 @@
       deadRemove: 'Eemalda valitud', deadNoUndo: 'Neid videoid ei saa niikuinii enam vaadata; toimingut ei saa tagasi võtta.',
       deadLogin: 'Eemaldamiseks logige YouTube’i sisse ja olge esitusloendi omanik.', deadDone: 'Eemaldatud ja kontrollitud kustutatud/privaatseid videoid: {0}.',
       deadPartial: 'Eemaldatud: {0}; esitusloendis endiselt nähtaval: {1}. YouTube ei pruukinud taotlust täita; proovige hiljem uuesti.', total: 'kokku {0}', keys: 'Otseteed: ⇧ klõps = vahemik, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = eemalda, Esc',
-      langLabel: 'Keel', support: 'Toeta', errNoCfg: 'YouTube’i konfiguratsiooni (ytcfg) ei leitud. Värskendage lehte.', errListRead: 'Esitusloendit ei õnnestunud lugeda (see võib olla privaatne, kustutatud või kättesaamatu).',
+      langLabel: 'Keel', support: 'Toeta mind', errNoCfg: 'YouTube’i konfiguratsiooni (ytcfg) ei leitud. Värskendage lehte.', errListRead: 'Esitusloendit ei õnnestunud lugeda (see võib olla privaatne, kustutatud või kättesaamatu).',
       errEditFailed: 'Esitusloendi muutmine ebaõnnestus: {0}', errCreate: 'Esitusloendit ei õnnestunud luua.', errSafety: 'Turvakontroll: ootamatu video ID.',
     },
     ja: {
@@ -1111,7 +1111,7 @@
       deadRemove: '選択した動画を取り除く', deadNoUndo: 'これらの動画はすでに視聴できません。この操作は元に戻せません。',
       deadLogin: '取り除くには、YouTube にログインし、再生リストの所有者である必要があります。', deadDone: '削除済み/非公開の動画 {0} 本を取り除き、確認しました。',
       deadPartial: '{0} 本を取り除きました。{1} 本はまだ再生リストに表示されています。YouTube がリクエストを反映していない可能性があります。しばらくしてからもう一度お試しください。', total: '合計 {0}', keys: 'ショートカット: ⇧ クリック = 範囲、⌘/Ctrl+A、⌘/Ctrl+C/X/V、Del = 削除、Esc',
-      langLabel: '言語', support: '支援する', errNoCfg: 'YouTube の設定（ytcfg）が見つかりません。ページを更新してください。', errListRead: '再生リストを読み込めませんでした（非公開、削除済み、またはアクセス権がない可能性があります）。',
+      langLabel: '言語', support: '作者を支援', errNoCfg: 'YouTube の設定（ytcfg）が見つかりません。ページを更新してください。', errListRead: '再生リストを読み込めませんでした（非公開、削除済み、またはアクセス権がない可能性があります）。',
       errEditFailed: '再生リストの編集に失敗しました: {0}', errCreate: '再生リストを作成できませんでした。', errSafety: '安全チェック: 予期しない動画 ID です。',
     },
     ko: {
@@ -1157,7 +1157,7 @@
       deadRemove: '선택 항목 제거', deadNoUndo: '이 동영상은 이미 볼 수 없으며, 이 작업은 실행취소할 수 없습니다.',
       deadLogin: '제거하려면 YouTube에 로그인하고 재생목록의 소유자여야 합니다.', deadDone: '삭제된/비공개 동영상 {0}개를 제거하고 확인했습니다.',
       deadPartial: '{0}개를 제거했습니다. {1}개는 아직 재생목록에 표시됩니다. YouTube에서 요청을 적용하지 않았을 수 있으니 나중에 다시 시도하세요.', total: '총 {0}', keys: '단축키: ⇧ 클릭 = 범위, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = 삭제, Esc',
-      langLabel: '언어', support: '후원하기', errNoCfg: 'YouTube 구성(ytcfg)을 찾을 수 없습니다. 페이지를 새로고침하세요.', errListRead: '재생목록을 읽을 수 없습니다(비공개이거나 삭제되었거나 액세스 권한이 없을 수 있음).',
+      langLabel: '언어', support: '개발자 후원하기', errNoCfg: 'YouTube 구성(ytcfg)을 찾을 수 없습니다. 페이지를 새로고침하세요.', errListRead: '재생목록을 읽을 수 없습니다(비공개이거나 삭제되었거나 액세스 권한이 없을 수 있음).',
       errEditFailed: '재생목록 수정 실패: {0}', errCreate: '재생목록을 만들 수 없습니다.', errSafety: '안전 확인: 예상하지 못한 동영상 ID입니다.',
     },
     hi: {
@@ -1203,7 +1203,7 @@
       deadRemove: 'चुने गए हटाएं', deadNoUndo: 'ये वीडियो पहले से ही नहीं देखे जा सकते; इस कार्रवाई को पहले जैसा नहीं किया जा सकता।',
       deadLogin: 'इन्हें हटाने के लिए YouTube में साइन इन करें और प्लेलिस्ट के मालिक हों।', deadDone: '{0} मिटाए गए/निजी वीडियो हटाए गए और पुष्टि की गई।',
       deadPartial: '{0} हटाए गए; {1} अब भी प्लेलिस्ट में दिख रहे हैं। हो सकता है कि YouTube ने अनुरोध लागू न किया हो; कुछ देर बाद फिर कोशिश करें।', total: 'कुल {0}', keys: 'शॉर्टकट: ⇧ क्लिक = रेंज, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = हटाएं, Esc',
-      langLabel: 'भाषा', support: 'सहयोग करें', errNoCfg: 'YouTube का कॉन्फ़िगरेशन (ytcfg) नहीं मिला। पेज रीफ़्रेश करें।', errListRead: 'प्लेलिस्ट पढ़ी नहीं जा सकी (हो सकता है कि वह निजी हो, मिटा दी गई हो या उसका ऐक्सेस न हो)।',
+      langLabel: 'भाषा', support: 'मेरा सहयोग करें', errNoCfg: 'YouTube का कॉन्फ़िगरेशन (ytcfg) नहीं मिला। पेज रीफ़्रेश करें।', errListRead: 'प्लेलिस्ट पढ़ी नहीं जा सकी (हो सकता है कि वह निजी हो, मिटा दी गई हो या उसका ऐक्सेस न हो)।',
       errEditFailed: 'प्लेलिस्ट में बदलाव नहीं हो सका: {0}', errCreate: 'प्लेलिस्ट नहीं बनाई जा सकी।', errSafety: 'सुरक्षा जांच: अनचाहा वीडियो आईडी।',
     },
     id: {
@@ -1249,7 +1249,7 @@
       deadRemove: 'Keluarkan yang dipilih', deadNoUndo: 'Video ini memang sudah tidak dapat ditonton; tindakan ini tidak dapat diurungkan.',
       deadLogin: 'Untuk mengeluarkannya, login ke YouTube dan jadilah pemilik playlist.', deadDone: '{0} video yang dihapus/pribadi dikeluarkan dan diverifikasi.',
       deadPartial: '{0} dikeluarkan; {1} masih muncul di playlist. YouTube mungkin belum menerapkan permintaan; coba lagi nanti.', total: 'total {0}', keys: 'Pintasan: ⇧ klik = rentang, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = hapus, Esc',
-      langLabel: 'Bahasa', support: 'Dukung', errNoCfg: 'Konfigurasi YouTube (ytcfg) tidak ditemukan. Segarkan halaman.', errListRead: 'Playlist tidak dapat dibaca (mungkin pribadi, dihapus, atau tidak dapat diakses).',
+      langLabel: 'Bahasa', support: 'Dukung saya', errNoCfg: 'Konfigurasi YouTube (ytcfg) tidak ditemukan. Segarkan halaman.', errListRead: 'Playlist tidak dapat dibaca (mungkin pribadi, dihapus, atau tidak dapat diakses).',
       errEditFailed: 'Gagal mengedit playlist: {0}', errCreate: 'Playlist tidak dapat dibuat.', errSafety: 'Pemeriksaan keamanan: ID video tidak terduga.',
     },
     vi: {
@@ -1295,7 +1295,7 @@
       deadRemove: 'Gỡ các mục đã chọn', deadNoUndo: 'Những video này vốn đã không xem được; không thể hoàn tác thao tác này.',
       deadLogin: 'Để gỡ, hãy đăng nhập YouTube và là chủ sở hữu danh sách phát.', deadDone: 'Đã gỡ và xác minh {0} video đã xóa/riêng tư.',
       deadPartial: 'Đã gỡ {0}; {1} vẫn xuất hiện trong danh sách phát. Có thể YouTube chưa áp dụng yêu cầu; hãy thử lại sau.', total: 'tổng {0}', keys: 'Phím tắt: ⇧ nhấp = khoảng, ⌘/Ctrl+A, ⌘/Ctrl+C/X/V, Del = xóa, Esc',
-      langLabel: 'Ngôn ngữ', support: 'Ủng hộ', errNoCfg: 'Không tìm thấy cấu hình YouTube (ytcfg). Hãy làm mới trang.', errListRead: 'Không thể đọc danh sách phát (có thể là riêng tư, đã bị xóa hoặc không truy cập được).',
+      langLabel: 'Ngôn ngữ', support: 'Ủng hộ tôi', errNoCfg: 'Không tìm thấy cấu hình YouTube (ytcfg). Hãy làm mới trang.', errListRead: 'Không thể đọc danh sách phát (có thể là riêng tư, đã bị xóa hoặc không truy cập được).',
       errEditFailed: 'Không chỉnh sửa được danh sách phát: {0}', errCreate: 'Không thể tạo danh sách phát.', errSafety: 'Kiểm tra an toàn: mã nhận dạng video không mong đợi.',
     },
   };
