@@ -17,15 +17,19 @@ Playlist Multiselect for YouTube™ ("the extension") is a Chrome extension that
 | Playlist contents shown on the page (video IDs, titles, channel names, durations) | To list, select, copy, move, remove and sort videos | Read from and sent back to `youtube.com` only, to perform the action you clicked |
 | Your YouTube session cookie (`SAPISID` / `__Secure-3PAPISID`) | To create the same authorization header that youtube.com's own web page creates, so playlist changes are made with your existing login | The cookie value is never stored or sent anywhere by the extension; only the authorization header derived from it is sent, and only to `youtube.com` |
 | Extension clipboard (video IDs, titles and source playlist of videos you copy or cut) | To paste videos into another playlist, also across tabs | Saved in your browser's `localStorage` for `youtube.com` (key `msx.clipboard.v1`); overwritten by your next copy or cut |
-| Language choice (TR or EN) | To remember the interface language | Saved in your browser's `localStorage` for `youtube.com` (key `msx.lang.v1`) |
+| Language choice (one of the 29 interface languages) | To remember the interface language | Saved in your browser's `localStorage` for `youtube.com` (key `msx.lang.v1`) |
+| Search mode (plain text or RegEx) | To remember whether RegEx search is switched on | Saved in your browser's `localStorage` for `youtube.com` (key `msx.regex.v1`) |
 
 Video thumbnails are loaded from YouTube's image server (`i.ytimg.com`), as on YouTube itself. To check whether a hidden video is deleted or private, the extension calls YouTube's public oEmbed endpoint on `youtube.com`.
+
+## Limited Use
+The extension's use of user data complies with the [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/limited-use), including the Limited Use requirements: the data listed above is used only to provide the playlist features you invoke, is not transferred to anyone other than `youtube.com`, and is not used for advertising, profiling or any unrelated purpose.
 
 ## Permissions
 The extension requests no Chrome permissions. It runs only on `https://www.youtube.com/*`.
 
 ## Removing data
-Uninstalling the extension stops all processing. The two `localStorage` entries above can be removed by clearing site data for `youtube.com` in Chrome's settings.
+Uninstalling the extension stops all processing. The three `localStorage` entries above can be removed by clearing site data for `youtube.com` in Chrome's settings.
 
 ## Contact and changes
 Questions: open an issue at https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues. Changes to this policy are published in this file, and the full history is visible in the repository.
@@ -49,15 +53,19 @@ YouTube™ için Playlist Çoklu Seçim ("eklenti"), YouTube oynatma listelerind
 - **Sayfadaki liste içeriği** (video kimlikleri, başlıklar, kanal adları, süreler): listeleme, seçme ve tıkladığın işlemi yapmak için. Yalnızca `youtube.com`'dan okunur ve yalnızca `youtube.com`'a gönderilir.
 - **YouTube oturum çerezin** (`SAPISID` / `__Secure-3PAPISID`): youtube.com'un kendi sayfasının ürettiği yetkilendirme başlığının aynısını üretmek için. Çerez değeri eklenti tarafından saklanmaz ve hiçbir yere gönderilmez; yalnızca ondan türetilen başlık, yalnızca `youtube.com`'a gönderilir.
 - **Eklenti panosu** (kopyaladığın/kestiğin videoların kimlik, başlık ve kaynak liste bilgisi): başka listeye yapıştırmak için. Tarayıcının `youtube.com` localStorage'ında (`msx.clipboard.v1`) tutulur, bir sonraki kopyalama/kesme ile üzerine yazılır.
-- **Dil seçimin** (TR/EN): `youtube.com` localStorage'ında (`msx.lang.v1`) tutulur.
+- **Dil seçimin** (29 arayüz dilinden biri): `youtube.com` localStorage'ında (`msx.lang.v1`) tutulur.
+- **Arama modu** (düz metin ya da RegEx): RegEx aramasının açık olup olmadığını hatırlamak için. `youtube.com` localStorage'ında (`msx.regex.v1`) tutulur.
 
 Video küçük resimleri YouTube'un kendi görsel sunucusundan (`i.ytimg.com`) yüklenir. Gizli bir videonun silinmiş mi özel mi olduğunu anlamak için `youtube.com` üzerindeki herkese açık oEmbed servisi kullanılır.
+
+### Sınırlı kullanım (Limited Use)
+Eklentinin kullanıcı verilerini kullanımı, Limited Use koşulları dahil [Chrome Web Mağazası Kullanıcı Verileri Politikası](https://developer.chrome.com/docs/webstore/program-policies/limited-use)'na uygundur: yukarıda sayılan veriler yalnızca senin başlattığın liste işlemlerini yapmak için kullanılır, `youtube.com` dışında kimseye aktarılmaz; reklam, profilleme veya ilgisiz başka bir amaç için kullanılmaz.
 
 ### İzinler
 Eklenti hiçbir Chrome izni istemez; yalnızca `https://www.youtube.com/*` sayfalarında çalışır.
 
 ### Verilerin silinmesi
-Eklentiyi kaldırınca tüm işlem durur. Yukarıdaki iki localStorage kaydı, Chrome ayarlarından `youtube.com` site verileri temizlenerek silinebilir.
+Eklentiyi kaldırınca tüm işlem durur. Yukarıdaki üç localStorage kaydı, Chrome ayarlarından `youtube.com` site verileri temizlenerek silinebilir.
 
 ### İletişim ve değişiklikler
 Sorular için: https://github.com/mustafacicek-eee/youtube-playlist-multiselect/issues. Bu politikadaki değişiklikler bu dosyada yayımlanır; geçmişi repoda görülebilir.
